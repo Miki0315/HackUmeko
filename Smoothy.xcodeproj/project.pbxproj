@@ -16,7 +16,14 @@
 		219957D21D7120910017D0C8 /* SmoothyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219957D11D7120910017D0C8 /* SmoothyUITests.swift */; };
 		219957E01D7121090017D0C8 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219957DF1D7121090017D0C8 /* ViewController2.swift */; };
 		219957E81D713BB30017D0C8 /* FinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219957E71D713BB30017D0C8 /* FinalViewController.swift */; };
-		219957F01D7817E50017D0C8 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 219957EF1D7817E50017D0C8 /* CoreMotion.framework */; };
+		219957F21D7B4A720017D0C8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 219957F11D7B4A720017D0C8 /* AVFoundation.framework */; };
+		219957F41D7B4A8E0017D0C8 /* bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 219957F31D7B4A8E0017D0C8 /* bgm.mp3 */; };
+		219957F81D7B5A5C0017D0C8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 219957F71D7B5A5C0017D0C8 /* AudioToolbox.framework */; };
+		219957FA1D7B61D70017D0C8 /* mix.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 219957F91D7B61D70017D0C8 /* mix.mp3 */; };
+		219957FC1D7BDA9E0017D0C8 /* close.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 219957FB1D7BDA9E0017D0C8 /* close.mp3 */; };
+		219957FE1D7BDAAC0017D0C8 /* decision.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 219957FD1D7BDAAC0017D0C8 /* decision.mp3 */; };
+		219958001D7BDAC20017D0C8 /* in.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 219957FF1D7BDAC20017D0C8 /* in.mp3 */; };
+		219958021D7BDDD90017D0C8 /* out.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 219958011D7BDDD90017D0C8 /* out.mp3 */; };
 		D0C29DC71D71CE40005982F1 /* apple.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C29DC21D71CE40005982F1 /* apple.png */; };
 		D0C29DC81D71CE40005982F1 /* banana.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C29DC31D71CE40005982F1 /* banana.png */; };
 		D0C29DC91D71CE40005982F1 /* mixer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D0C29DC41D71CE40005982F1 /* mixer.jpg */; };
@@ -75,7 +82,14 @@
 		219957D31D7120910017D0C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		219957DF1D7121090017D0C8 /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		219957E71D713BB30017D0C8 /* FinalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalViewController.swift; sourceTree = "<group>"; };
-		219957EF1D7817E50017D0C8 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		219957F11D7B4A720017D0C8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		219957F31D7B4A8E0017D0C8 /* bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bgm.mp3; path = ../../bgm.mp3; sourceTree = "<group>"; };
+		219957F71D7B5A5C0017D0C8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		219957F91D7B61D70017D0C8 /* mix.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = mix.mp3; path = ../../mix.mp3; sourceTree = "<group>"; };
+		219957FB1D7BDA9E0017D0C8 /* close.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = close.mp3; path = ../../close.mp3; sourceTree = "<group>"; };
+		219957FD1D7BDAAC0017D0C8 /* decision.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = decision.mp3; path = ../../decision.mp3; sourceTree = "<group>"; };
+		219957FF1D7BDAC20017D0C8 /* in.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = in.mp3; path = ../../in.mp3; sourceTree = "<group>"; };
+		219958011D7BDDD90017D0C8 /* out.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = out.mp3; path = ../../out.mp3; sourceTree = "<group>"; };
 		D0C29DC21D71CE40005982F1 /* apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apple.png; sourceTree = "<group>"; };
 		D0C29DC31D71CE40005982F1 /* banana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banana.png; sourceTree = "<group>"; };
 		D0C29DC41D71CE40005982F1 /* mixer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mixer.jpg; sourceTree = "<group>"; };
@@ -106,7 +120,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				219957F01D7817E50017D0C8 /* CoreMotion.framework in Frameworks */,
+				219957F81D7B5A5C0017D0C8 /* AudioToolbox.framework in Frameworks */,
+				219957F21D7B4A720017D0C8 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,7 +145,8 @@
 		219957A51D7120910017D0C8 = {
 			isa = PBXGroup;
 			children = (
-				219957EF1D7817E50017D0C8 /* CoreMotion.framework */,
+				219957F71D7B5A5C0017D0C8 /* AudioToolbox.framework */,
+				219957F11D7B4A720017D0C8 /* AVFoundation.framework */,
 				219957B01D7120910017D0C8 /* Smoothy */,
 				219957C51D7120910017D0C8 /* SmoothyTests */,
 				219957D01D7120910017D0C8 /* SmoothyUITests */,
@@ -151,6 +167,12 @@
 		219957B01D7120910017D0C8 /* Smoothy */ = {
 			isa = PBXGroup;
 			children = (
+				219958011D7BDDD90017D0C8 /* out.mp3 */,
+				219957FF1D7BDAC20017D0C8 /* in.mp3 */,
+				219957FD1D7BDAAC0017D0C8 /* decision.mp3 */,
+				219957FB1D7BDA9E0017D0C8 /* close.mp3 */,
+				219957F91D7B61D70017D0C8 /* mix.mp3 */,
+				219957F31D7B4A8E0017D0C8 /* bgm.mp3 */,
 				D0C29DC21D71CE40005982F1 /* apple.png */,
 				D0C29DC31D71CE40005982F1 /* banana.png */,
 				D0C29DC41D71CE40005982F1 /* mixer.jpg */,
@@ -311,6 +333,7 @@
 			files = (
 				D0C29F481D77E507005982F1 /* skin.png in Resources */,
 				219957BC1D7120910017D0C8 /* LaunchScreen.storyboard in Resources */,
+				219957FE1D7BDAAC0017D0C8 /* decision.mp3 in Resources */,
 				D0C29F001D76CCA8005982F1 /* snowman.png in Resources */,
 				D0C29DCB1D71CE40005982F1 /* tomato.png in Resources */,
 				D0C29F441D77E4FD005982F1 /* health3.png in Resources */,
@@ -320,19 +343,24 @@
 				D0C29EF81D76AB25005982F1 /* nervous.png in Resources */,
 				D0C29EF71D76AB25005982F1 /* happy.png in Resources */,
 				D0C29F431D77E4FD005982F1 /* health.png in Resources */,
+				219957FA1D7B61D70017D0C8 /* mix.mp3 in Resources */,
 				D0C29EFC1D76AB89005982F1 /* tired2.png in Resources */,
+				219957F41D7B4A8E0017D0C8 /* bgm.mp3 in Resources */,
 				D0C29F471D77E507005982F1 /* diet.png in Resources */,
 				219957B91D7120910017D0C8 /* Assets.xcassets in Resources */,
 				D0C29DC71D71CE40005982F1 /* apple.png in Resources */,
+				219958001D7BDAC20017D0C8 /* in.mp3 in Resources */,
 				D0C29F421D77E4FD005982F1 /* eye1.png in Resources */,
 				219957B71D7120910017D0C8 /* Main.storyboard in Resources */,
 				D0C29F411D77E4FD005982F1 /* eye.png in Resources */,
 				D0C29DC81D71CE40005982F1 /* banana.png in Resources */,
+				219957FC1D7BDA9E0017D0C8 /* close.mp3 in Resources */,
 				D0C29F4D1D77F0EA005982F1 /* bitt.png in Resources */,
 				D0C29F501D77F0EA005982F1 /* sweet.png in Resources */,
 				D0C29F4E1D77F0EA005982F1 /* fresh.png in Resources */,
 				D0C29F4F1D77F0EA005982F1 /* mild.png in Resources */,
 				D0C29DC91D71CE40005982F1 /* mixer.jpg in Resources */,
+				219958021D7BDDD90017D0C8 /* out.mp3 in Resources */,
 				D0C29EFF1D76CCA8005982F1 /* imomushiman.png in Resources */,
 				D0C29DCA1D71CE40005982F1 /* orange.png in Resources */,
 			);

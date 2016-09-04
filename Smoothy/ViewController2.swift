@@ -7,9 +7,13 @@
 //
 
 import UIKit
-import CoreMotion
+import AVFoundation
+import AudioToolbox
+
 
 class ViewController2: UIViewController {
+    
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
     
     //16個のアイコン表示のためのUIImageView
@@ -76,13 +80,16 @@ class ViewController2: UIViewController {
     @IBOutlet weak var heartX: NSLayoutConstraint!
     @IBOutlet weak var heartY: NSLayoutConstraint!
     
-    
-    
     @IBOutlet var checkLabel: UILabel!
-    
-    
     @IBOutlet var shakeLabel: UILabel!
     @IBOutlet var topLabel: UILabel!
+    
+    //シェイクした回数を数える変数
+    var shake = 0
+    var players:[AVAudioPlayer]!
+    //音楽が入っている配列
+    let audioFiles = ["mix","close","in","out"]
+    
     //蓋閉めたか
     var top = true
 
@@ -98,6 +105,9 @@ class ViewController2: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //オープニングの曲を止める
+        appDelegate.audioPlayer.stop()
+        appDelegate.audioPlayer.currentTime = 0.0
         
         //初期状態で季節アイコン以外を非表示にする
         sweet.hidden = true
@@ -115,6 +125,8 @@ class ViewController2: UIViewController {
         eye.hidden = true
         heart.hidden = true
         
+        //音楽のセットアップ
+        setup()
         
         // Do any additional setup after loading the view.
     }
@@ -143,9 +155,11 @@ class ViewController2: UIViewController {
         if(check(x,y:y) == true){
             print("りんごIn")
             iconArray[0] = true
+            play(2)
         }else{
             print("りんごOut")
             iconArray[0] = false
+            //play(3)
         }
        
         //移動量を0にする。
@@ -169,9 +183,11 @@ class ViewController2: UIViewController {
         if(check(x,y:y) == true){
             print("バナナIn")
             iconArray[1] = true
+            play(2)
         }else{
             print("バナナOut")
             iconArray[1] = false
+            //play(3)
         }
         
         sender.setTranslation(CGPointZero, inView:view)
@@ -195,9 +211,11 @@ class ViewController2: UIViewController {
         if(check(x,y:y) == true){
             print("トマトIn")
             iconArray[2] = true
+            play(2)
         }else{
             print("トマトOut")
             iconArray[2] = false
+            //play(3)
         }
 
         sender.setTranslation(CGPointZero, inView:view)
@@ -220,9 +238,11 @@ class ViewController2: UIViewController {
         if(check(x,y:y) == true){
             print("オレンジIn")
             iconArray[3] = true
+            play(2)
         }else{
             print("オレンジOut")
             iconArray[3] = false
+            //play(3)
         }
 
         sender.setTranslation(CGPointZero, inView:view)
@@ -243,9 +263,11 @@ class ViewController2: UIViewController {
         if(check(x,y:y) == true){
             print("あまいIn")
             iconArray[4] = true
+            play(2)
         }else{
             print("あまいOut")
             iconArray[4] = false
+            //play(3)
         }
         
         sender.setTranslation(CGPointZero, inView:view)
@@ -263,9 +285,11 @@ class ViewController2: UIViewController {
         if(check(x,y:y) == true){
             print("にがいIn")
             iconArray[5] = true
+            play(2)
         }else{
             print("にがいOut")
             iconArray[5] = false
+            //play(3)
         }
         sender.setTranslation(CGPointZero, inView:view)
     }
@@ -282,9 +306,11 @@ class ViewController2: UIViewController {
         if(check(x,y:y) == true){
             print("さわやかIn")
             iconArray[6] = true
+            play(2)
         }else{
             print("さわやかOut")
             iconArray[6] = false
+            //play(3)
         }
         
         sender.setTranslation(CGPointZero, inView:view)
@@ -302,9 +328,11 @@ class ViewController2: UIViewController {
         if(check(x,y:y) == true){
             print("まいるどIn")
             iconArray[7] = true
+            play(2)
         }else{
             print("まいるどOut")
             iconArray[7] = false
+            //play(3)
         }
         
         sender.setTranslation(CGPointZero, inView:view)
@@ -323,9 +351,11 @@ class ViewController2: UIViewController {
         if(check(x,y:y) == true){
             print("はっぴーIn")
             iconArray[8] = true
+            play(2)
         }else{
             print("はっぴーOut")
             iconArray[8] = false
+            //play(3)
         }
         sender.setTranslation(CGPointZero, inView:view)
     }
@@ -343,9 +373,11 @@ class ViewController2: UIViewController {
         if(check(x,y:y) == true){
             print("あんはっぴーIn")
             iconArray[9] = true
+            play(2)
         }else{
             print("あんはっぴーOut")
             iconArray[9] = false
+            //play(3)
         }
         sender.setTranslation(CGPointZero, inView:view)
     }
@@ -363,9 +395,11 @@ class ViewController2: UIViewController {
         if(check(x,y:y) == true){
             print("きんちょうIn")
             iconArray[10] = true
+            play(2)
         }else{
             print("きんちょうOut")
             iconArray[10] = false
+            //play(3)
         }
         sender.setTranslation(CGPointZero, inView:view)
     }
@@ -383,9 +417,11 @@ class ViewController2: UIViewController {
         if(check(x,y:y) == true){
             print("つかれたIn")
             iconArray[11] = true
+            play(2)
         }else{
             print("つかれたOut")
             iconArray[11] = false
+            //play(3)
         }
         sender.setTranslation(CGPointZero, inView:view)
     }
@@ -402,9 +438,11 @@ class ViewController2: UIViewController {
         if(check(x,y:y) == true){
             print("だいえっとIn")
             iconArray[12] = true
+            play(2)
         }else{
             print("だいえっとOut")
             iconArray[12] = false
+            //play(3)
         }
         sender.setTranslation(CGPointZero, inView:view)
     }
@@ -422,9 +460,11 @@ class ViewController2: UIViewController {
         if(check(x,y:y) == true){
             print("びはだIn")
             iconArray[13] = true
+            play(2)
         }else{
             print("びはだOut")
             iconArray[13] = false
+            //play(3)
         }
         sender.setTranslation(CGPointZero, inView:view)
     }
@@ -442,9 +482,11 @@ class ViewController2: UIViewController {
         if(check(x,y:y) == true){
             print("めIn")
             iconArray[14] = true
+            play(2)
         }else{
             print("めOut")
             iconArray[14] = false
+            //play(3)
         }
         sender.setTranslation(CGPointZero, inView:view)
     }
@@ -462,9 +504,11 @@ class ViewController2: UIViewController {
         if(check(x,y:y) == true){
             print("かいふくIn")
             iconArray[15] = true
+            play(2)
         }else{
             print("かいふくOut")
             iconArray[15] = false
+            //play(3)
         }
         sender.setTranslation(CGPointZero, inView:view)
     }
@@ -521,22 +565,40 @@ class ViewController2: UIViewController {
             }
         }
         
+        top = true
+        print("蓋をしめた")
+        play(1)
+     
+        //ミキサーの音流す
+        //play(0)
         
     //    topLabel.origin.x = 155
      //   topLabel.origin.y = 260
         
     }
 
-    
-    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
-        shakeLabel.text = "shake shake!!"
-        if top == true {
-        self.performSegueWithIdentifier("next", sender: self)
+    //振って次の画面に行く
+    override func motionBegan(motion: UIEventSubtype, withEvent event: UIEvent?) {
+
+        if(top == true){
+        //蓋が閉まっているとき、振っている回数をカウント
+        if (event?.subtype == UIEventSubtype.MotionShake && event?.type == UIEventType.Motion){
+            play(0)
+            shake++
+            print(shake)
+            shakeLabel.text = "shake shake!!"
+            //バイブ
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+        }
+        if(shake >= 10){
+           self.performSegueWithIdentifier("next", sender: self)
+            print("次の画面にいきまーす")
+            players[0].stop()
+            
+          }
         }
         
     }
-    
-    
     
     
     @IBAction func seasonButton() {
@@ -652,6 +714,26 @@ class ViewController2: UIViewController {
         eye.hidden = false
         heart.hidden = false
     }
+    
+    //音楽を流すメソッド
+    func play(n:Int) {
+        if n < players.count {
+            players[n].play()
+        }
+    }
+    //音楽のセットアップ
+    func setup() {
+        players = []
+        for fname in audioFiles {
+            let path = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(fname, ofType: "mp3")!)
+            do {
+                let player = try AVAudioPlayer(contentsOfURL:path)
+                players.append(player)
+            } catch let error as NSError {
+                print("error has occurred: \(error)")
+            }
+        } }
+
     
     
 
