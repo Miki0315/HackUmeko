@@ -70,7 +70,7 @@
                                 <state key="normal" title="戻る"/>
                                 <connections>
                                     <action selector="tapBack" destination="bud-au-Brw" eventType="touchUpInside" id="QCS-mX-Mu2"/>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" id="PqS-sY-fCy"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="6xK-EL-TPn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -80,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ry0-N6-2Xq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="244.5" y="1128.5"/>
+            <point key="canvasLocation" x="131.5" y="1109.5"/>
         </scene>
         <!--View Controller2-->
         <scene sceneID="WOg-u6-kUc">
@@ -572,6 +572,6 @@
         <image name="unhappy2.png" width="350" height="350"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PqS-sY-fCy"/>
+        <segue reference="6xK-EL-TPn"/>
     </inferredMetricsTieBreakers>
 </document>
